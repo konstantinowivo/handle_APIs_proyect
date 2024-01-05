@@ -1,0 +1,18 @@
+useState HOOK
+
+Este hook permite a los componentes funcionales gestionar el estado local.
+Podemos usarlo para declarar variables de estado y una función para actualizar el estado. Ej:
+
+import React, { useState } from 'react';
+
+function Example() {
+
+  const [count, setCount] = useState(0); // aquí aplicamos useState
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+}

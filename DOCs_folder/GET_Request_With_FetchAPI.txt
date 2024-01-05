@@ -1,0 +1,63 @@
+Cómo podemos realizar una petición GET en React con la API de Fetch?
+
+Podemos usar el método GET* de HTTP para solicitar data de un endpoint.
+Cómo establecimos anteriormente la API de Fetch acepta un argumento preponderante
+que és "true", pero tamabién acepta un argumento opcional especialmente cuando
+utilizamos el método GET, a diferencia de los méotodos POST* y DELETE* en los cuales
+deberemos adjuntar los métodos a los opciones del array. Por defecto Fetch es GET.
+
+
+fetch(url, {
+    method: "GET" // default, so we can ignore
+})
+
+
+Perfecto, ahora vamos a aplicar todo lo que hemos visto y realizaremos una petición GET
+para "fetchear" data desde una API. Ej:
+
+
+const App = () => {
+
+   const [posts, setPosts] = useState([]); 
+
+   useEffect(() => {
+      fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+         .then((response) => response.json())
+         .then((data) => {
+            console.log(data);
+            setPosts(data);
+         })
+         .catch((err) => {
+            console.log(err.message);
+         });
+   }, []);
+
+return (
+   // ... consume here
+);
+};
+
+
+
+
+Este tipo de métodos son verbos HTTP, utilizados para realizar diferentes operaciones
+en un servidor web. Son utilizados para la comunicación entre clientes generalemente
+entre navegadores web y servidores web. A continuación una breve descripcion de ellos:
+
+* GET: Este método se utiliza para solicitar datos del servidor.
+
+* POST: Usado para enviar datos al servidor para ser procesados. A diferencia de GET,
+las solicitudes POST pueden llevar datos en el cuerpo de la solicitud, lo que las hace
+adecuadas para enviar formularios y datos sensibles. Este tipo de solicitudes tienen impacto
+en el servidor y no son indempotentes, lo que significa que realizar la misma solicitud varias
+veces puede tener efectos diferentes
+
+* PUT: Se usa para actualizar o reemplazar un recurso existente en el servidor con los datos
+proporcionados en la solicitud. Si el recurso no existe PUT puede crear uno nuevo con los datos
+proporcionados. Es importante destacar que PUT debe ser idempotente, lo que significa que realizar
+la misma solicitud varias veces no debe cambiar el resultado mas alla de la primera vez.
+
+* DELETE: El méotodo DELETE se usa para eliminar un recurso del servidor, cuando realizamos una
+solicitud del tipo DELETE, el servidor deberá eliminar el recurso existente. Al igual que PUT, DELETE
+también debe ser idempotente, lo que significa que realizar la misma solicitud varias veces no debe
+cambiar el resultado después de la primera vez.

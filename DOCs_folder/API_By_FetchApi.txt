@@ -1,0 +1,17 @@
+Cómo acceder a una API mediante Fetch API?
+
+Fetch API es un método integrado de JS para recuperar recursos de un servidor
+o un "endpoint" de API. Fetch se encuentra integrado, por lo que no es necesario
+instalar ninguna dependencia o paquete. 
+El método fetch() requiere un argumento obligatorio que es la URL o ruta del recurso
+que se desea recuperar. Luego devolverá una "Promises" para que podamos manejar el éxito
+o fracaso de la petición usando los métodos .then() y .catch().
+El formato de respuesta por default es generalmente un HTTP, pero podemos transformar
+la misma en formato JSON (objeto más facilmente manipulable) agregando el método json().
+ Ej:
+
+// Esto es realizar un Fetch de nuestra API, por defecto mediante un método GET (ver en GET_Request_With_FetchAPI)
+
+fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+   .then(response => response.json())
+   .then(data => console.log(data));

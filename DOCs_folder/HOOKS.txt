@@ -1,0 +1,18 @@
+Introdcucción:
+
+Consumir una API en React es muy diferente a cómo lo hacíamos en JavaScript.
+Esto es porque estas solicitudes ahora las vamos a realizar por medio de componentes de React.
+En este caso en particular, vamos a estar utilizando componentes funcionales, lo que significa,
+que vamos a necesitar utilizar "React HOOKS"
+
+
+React HOOKS
+
+
+Son una carácteristica que se introdujo en la versión 16.8 de la bibliotea (React) y permite a los
+desarrolladores escribir componentes funcionales que pueden tener estados y otras carácteristica previamente
+disponibles sólo en componentes de clase.
+Los HOOKS proporcionan una forma más limpia y concisa de gestionar el estado y ciclo de vida de los 
+componentes funcionales.
+Los HOOKS son funciones especiales que nos permiten "enganchar" o acceder a caracteristicas específicas de React.
+

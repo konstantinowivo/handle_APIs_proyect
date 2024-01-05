@@ -1,0 +1,16 @@
+Que es AXIOS?
+
+Axios es una biblioteca de cliente HTTP basada en promesas que simplifica 
+el envío de solicitudes HTTP asincrónicas a puntos finales REST. 
+Este punto final en nuestro caso es la API JSONPlaceholder Posts, 
+a la que realizaremos solicitudes GET, POST y DELETE.
+
+1
+
+lo primero que vamos a hacer importar Axios a nuestro código, dentro de la etiqueta
+body de nuestro html
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+2
+

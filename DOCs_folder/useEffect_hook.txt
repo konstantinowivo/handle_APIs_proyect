@@ -1,0 +1,55 @@
+useEffect HOOK 
+
+Este hook permite a los componentes funcionales realizar efectos secundarios,
+como suscribirse a datos, realizar llamadas a API ó gestionar ciclo de vida de componentes.
+La mayor operación entonces ocurrirá en useEffect, dónde la data será "fetcheada", tan pronto
+cómo la aplicación cargue. La solicitud Fetch generará una promesa, la cuál podremos
+aceptar o rechazar. En este caso, manejamos la respuesta exitosa con el méotodo .then(),
+pero recibimos cómo respuesta un objeto, que no es lo que queremos. Entonces necesitamos convertir
+esa respuesta al formato JSON usando el méotodo .json(), esto también nos devolverá una segunda promesa
+con los datos "reales", los cuales vamos a manejar aplicando nuevamente el método .then()
+Una vez generada la lógica de promesa resuelta debemos configurar la lógica de promesa NO resuelta,
+eso lo vamos a generar mediante el método .catch()
+
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+
+    // useState (HOOK)
+  const [data, setData] = useState([]);
+
+    // useState (HOOK)
+  useEffect(() => {
+
+    // Realizar una llamada a una API y actualizar el estado (ver en API_By_FetchAPI)
+
+   fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+   .then((response) => response.json())
+   .then((data) => {console.log(data);
+    setPosts(data)
+    });
+    }, []); // El segundo argumento vacío indica que se ejecutará solo una vez
+
+  // A partir de aquí vamos a "consumir" nuestra API
+  return (
+    <ul>
+      {data.map((item) => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+
+* useContext: Este hook permite acceder al contesto de React en componentes funcionales, lo que facilita
+el acceso a datos globales compartidos en una aplicación
+
+* useReducer: Este hook es útil cuando necesitamos gestionar una estado más complejo y realizar actualizaciones
+basadas en acciones, es similar al uso de Redux* en aplicaciones React, pero a nivel de componente funcional.
+
+
+* Redux: es una biblioteca de gestión del estado en apps JS, comunmente usada en apps React.
+Proporciona un patrón de arquitectura predecible para gestionar el estado de una aplicación, lo que facilita la tarea
+de manetener y actualizar el estado de una aplicación a medida que esta crece en complejidad.
+Este tipo de biblioteca es mayormente utilizada en aplicaciones grandes y complejas, donde es necesario compartir
+y actualizar el estado en varios componentes y gestionar la lógica de la app de manera más predecible.

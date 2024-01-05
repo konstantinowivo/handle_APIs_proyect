@@ -1,0 +1,55 @@
+Que es una API?
+
+Su significado proviene de las siglas Application Programming Interface.
+Es un medio que permite que diferentes aplicaciones se comuniquen entre sí,
+mediante programación y nos devuelva respuestas en tiempo real.
+
+
+Que es REST?
+
+Su significado proviene del acrónimo* "REpresantional State Transfer", define
+un estilo arquitectónico y metodológico comunmente utilizado en el desarrollo
+de servicios de internet, cómo por ejemplo los sistemas hipermedia* distribuidos
+
+
+* Acrónimo: Procedimiento para la formación de palabras mediante la unión de letras o 
+sílabas del principio y el fin de dos o más palabras 
+que forman una expresión.
+
+* Hipermedia: Toma su nombre de la suma de hipertexto* y multimedia*, una red hipertextual
+en la que se incluye no sólo texto, sino también otros medios: imágenes, audio, video, etc.
+
+* Hipertexto: Se entiende como la organización de una base de información en bloques discretos
+de contenido llamados nodos, conectados a través de enlaces cuya selección genera distintas
+formas de recuperar la información de la base.
+
+* Multimedia: Consiste en la tecnología que utiliza la información almacenada en diferentes formatos
+y medios, controlados por un usuario.
+
+
+Solicitud a una API REST:
+
+Cuando realizamos una solicitud a una API REST, enviamos una representación del estado actual de
+la solicitud o del endpoint*
+
+
+* Endpoint: Son las URL's de una API o un backend que responden a una petición y deben "calzar" con un entrypoint*
+para existir. Usualmente los endpoints solo devuelven json (formato de data tipo objeto) o no devolveran nada y 
+no están pensados para interactuar con el usuario final. Un entrypoint puede hacer varios llamados a diferentes endpoints
+para mostrar estadísticas, galerías, últimos comentarios, etc.
+Se asume que cuando hablamos de endpoint estamos en un entorno RESTful, por lo cual (a diferencia del uso de un browser),
+el cliente puede usar un mismo endpoint con distintos verbos. Por ejemplo: "/users", va a devolver una lista de usuarios
+si usamos el verbo GET (traer info) y crear un usuario si usamos el verbo POST (enviar info).
+
+* Entrypoint: Es la URL que el visitante habrá ingresado en su navegador para ver su aplicación o sitio. Antiguamente,
+cada sección de un sitio web era un entrypoint ej: "home.html", "galeria.html", "contacto.html", etc.
+Con el uso de librerías o frameworks (React, Angular, Vue...), se ha vuelto trivial servir apps de una sóla página (SPA),
+en donde el visitante llega a una landing y desde ahí puede visitar el resto del sitio, dando la impresión de que navega
+entre diferentes páginas, cuando en realidad es siempre la misma landing. El visitante siente que la URL va cambiando y 
+realmente siente que se está moviendo entre links, cuando en realidad no ha dejado el mismo entrypoint.
+
+
+API's en React:
+
+En React podemos consumir API's de muchas maneras, en este caso en particular, vamos a trabajar con dos de las maneras más 
+utilizadas: Axios (un cliente HTTP basado en promesas) y Fetch API (una API web incorporada en el navegador)

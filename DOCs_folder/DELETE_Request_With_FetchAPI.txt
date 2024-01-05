@@ -1,0 +1,30 @@
+Como borramos datos del servidor? Mediante el método DELETE
+
+Para remover información de nuestro endpoint podemos hacerlo
+mediante el método DELETE. Ej:
+
+
+const deletePost = async (id) => {
+await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+   method: 'DELETE',
+}).then((response) => {
+   if (response.status === 200) {
+      setPosts(
+         posts.filter((post) => {
+            return post.id !== id;
+         })
+      );
+   } else {
+      return;
+   }
+});
+};
+
+
+Cómo vamos a realizar esto? El método DELETE, se activará cuando
+el botón de "btn-delete" de la renderización nuestro componente "Post" sea clickeado, 
+esto eliminará el dato del endpoint, pero también debemos hacerlo de nuestra interfaz de usuario,
+ahora conociendo el id del elemento eliminado, podemos eliminarlo del array del estado.
+
+
+
